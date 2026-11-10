@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans transition-colors duration-200;
+  }
+  .dark body {
+    @apply bg-gray-950 text-gray-100;
+  }
+}
+
+@layer components {
+  /* ── Buttons ─────────────────────────────────────────────────── */
+  .btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors font-medium;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors font-medium;
+  }
+
+  /* ── Inputs ──────────────────────────────────────────────────── */
+  .input-field {
+    @apply w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900;
+  }
+  .dark .input-field {
+    @apply border-gray-600 bg-gray-800 text-gray-100 focus:ring-blue-400;
+  }
+
+  /* ── Cards ───────────────────────────────────────────────────── */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6;
+  }
+  .dark .card {
+    @apply bg-gray-800 border-gray-700;
+  }
+
+  /* ── Priority badges ─────────────────────────────────────────── */
+  .badge-critical {
+    @apply bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+  .badge-high {
+    @apply bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+  .badge-medium {
+    @apply bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+  .badge-low {
+    @apply bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+
+  /* ── Status badges ───────────────────────────────────────────── */
+  .status-open {
+    @apply bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+  .status-progress {
+    @apply bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+  .status-escalated {
+    @apply bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+  .status-resolved {
+    @apply bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+}
+
+/* ── Global dark mode overrides ───────────────────────────────────
+   These override inline Tailwind classes applied in JSX without
+   needing to add dark: variants to every single component.        */
+
+/* Page backgrounds */
+.dark .min-h-screen,
+.dark main {
+  background-color: #030712; /* gray-950 */
+}
+
+/* White surface → dark surface */
+.dark .bg-white {
+  background-color: #1f2937 !important; /* gray-800 */
+}
+
+/* Light gray surface → slightly lighter dark */
+.dark .bg-gray-50 {
+  background-color: #111827 !important; /* gray-900 */
+}
+.dark .bg-gray-100 {
+  background-color: #1f2937 !important; /* gray-800 */
+}
+.dark .bg-gray-200 {
+  background-color: #374151 !important; /* gray-700 */
+}
+
+/* Text */
+.dark .text-gray-900 { color: #f9fafb !important; }
+.dark .text-gray-800 { color: #f3f4f6 !important; }
+.dark .text-gray-700 { color: #e5e7eb !important; }
+.dark .text-gray-600 { color: #d1d5db !important; }
+.dark .text-gray-500 { color: #9ca3af !important; }
+.dark .text-gray-400 { color: #6b7280 !important; }
+
+/* Borders */
+.dark .border-gray-100 { border-color: #374151 !important; }
+.dark .border-gray-200 { border-color: #4b5563 !important; }
+.dark .border-gray-300 { border-color: #4b5563 !important; }
+
+/* Divide lines */
+.dark .divide-gray-100 > * + * { border-color: #374151 !important; }
+.dark .divide-gray-200 > * + * { border-color: #4b5563 !important; }
+
+/* Hover states on rows/cards */
+.dark .hover\:bg-gray-50:hover  { background-color: #374151 !important; }
+.dark .hover\:bg-gray-100:hover { background-color: #4b5563 !important; }
+
+/* Table header */
+.dark .bg-gray-50 th,
+.dark table thead { background-color: #1f2937; color: #9ca3af; }
+
+/* Select elements */
+.dark select {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  border-color: #4b5563;
+}
+
+/* Textarea */
+.dark textarea {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  border-color: #4b5563;
+}
+
+/* Input */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="search"] {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  border-color: #4b5563;
+}
+
+/* Yellow internal note textarea */
+.dark .bg-yellow-50 {
+  background-color: #292524 !important;
+}
+.dark .border-yellow-200 {
+  border-color: #78350f !important;
+}
+
+/* Indigo accent surfaces */
+.dark .bg-indigo-50 {
+  background-color: #1e1b4b !important;
+  color: #a5b4fc !important;
+}
+
+/* Teal accent surfaces */
+.dark .bg-teal-50 {
+  background-color: #042f2e !important;
+}
+.dark .border-teal-100 {
+  border-color: #134e4a !important;
+}
+
+/* Accent surfaces */
+.dark .bg-blue-50    { background-color: #1e3a5f !important; }
+.dark .bg-red-50     { background-color: #450a0a !important; }
+.dark .bg-green-50   { background-color: #052e16 !important; }
+.dark .bg-amber-50   { background-color: #1c1008 !important; }
+.dark .bg-indigo-100 { background-color: #1e1b4b !important; }
+.dark .bg-blue-100   { background-color: #1e3a5f !important; }
+.dark .bg-purple-50  { background-color: #2e1065 !important; }
+
+/* Shadow softening in dark mode */
+.dark .shadow-sm  { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4) !important; }
+.dark .shadow-md  { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5) !important; }
+
+/* Dashboard stat card hex backgrounds — must not be overridden */
+.dark .bg-\[#0a1929\] { background-color: #0a1929 !important; }
+.dark .bg-\[#100b28\] { background-color: #100b28 !important; }
+.dark .bg-\[#1a0810\] { background-color: #1a0810 !important; }
+.dark .bg-\[#051a0f\] { background-color: #051a0f !important; }
+.dark .bg-\[#111827\] { background-color: #111827 !important; }
+.dark .bg-\[#0d2040\] { background-color: #0d2040 !important; }
+.dark .bg-\[#1a2535\] { background-color: #1a2535 !important; }
+
+/* Smooth transition on all surfaces */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}

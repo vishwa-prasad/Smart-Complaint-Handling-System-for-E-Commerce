@@ -1,0 +1,16 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+sqlalchemy==2.0.30
+python-jose[cryptography]==3.3.0
+bcrypt
+pydantic[email]==2.7.1
+python-dotenv==1.0.1
+# ML / NLP  (pre-built wheels — no compiler needed)
+scikit-learn
+nltk
+pandas
+openpyxl
+numpy
+tensorflow
+# Optional: MySQL support
+# mysql-connector-python==8.3.0
